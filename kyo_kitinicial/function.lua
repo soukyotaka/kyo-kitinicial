@@ -51,7 +51,7 @@ end
 
 kyocool = {}
 
-function cooldown(source,passport)
+cooldown = function(source,passport)
     if not kyocool[passport] or os.time() > kyocool[passport] + kyocfg['Cooldown']['Time to cooldown'] then
         return true
     end
