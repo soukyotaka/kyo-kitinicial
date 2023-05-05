@@ -55,6 +55,7 @@ cooldown = function(source,passport)
     if not kyocool[passport] or os.time() > kyocool[passport] + kyocfg['Cooldown']['Time to cooldown'] then
         return true
     end
+
     if kyocfg['Cooldown']['Time to cooldown'] > 3600 then
         hours = parseInt(kyocfg['Cooldown']['Time to cooldown']/3600);
         mins = string.format('%02.f', math.floor(kyocfg['Cooldown']['Time to cooldown']/60 - (hours*60)));
