@@ -12,7 +12,7 @@ kyotaka = function(source,passport)
 
         if kyocfg['Function']['Query']('kyo/selectkit', { passport = passport })[1] == nil then
             kyocfg['Function']['Execute']('kyo/insertkit', { passport = passport, Kit = false })
-   
+
         end
 
         if kyocfg['Function']['Query']('kyo/selectkit', { passport = passport })[1]['Kit'] ~= 1 then
@@ -52,7 +52,7 @@ end
 kyocool = {}
 
 cooldown = function(source,passport)
-    if not kyocool[passport] or os.time() > kyocool[passport] + kyocfg['Cooldown']['Time to cooldown'] then
+    if not kyocool[passport] or os['time']() > kyocool[passport] + kyocfg['Cooldown']['Time to cooldown'] then
         return true
     end
 
@@ -88,14 +88,14 @@ RegisterCommand('kyokit',function(source)
     end
 end)
 
-CreateThread(function()
+Citizen.CreateThread(function()
     if kyocfg['create database'] then
         kyocfg['Function']['Execute']('kyo/createTable')
         print('\27[33m [KYO]\27[0m\27[32m Scritp desenvolvido por:\27[0m\27[36m[Kyotaka#0007]\27[0m')
     else
         print('\27[33m [KYO]\27[0m\27[32m Scritp desenvolvido por:\27[0m\27[36m[Kyotaka#0007]\27[0m')
     end
-    Wait(1000)
+    Citizen.Wait(1000)
 end)
 
 -- kyo renewed - https://discord.gg/RVPcK7sQAK
