@@ -1,4 +1,4 @@
-fx_version 'adamant'
+fx_version 'cerulean'
 game 'gta5'
 Author 'Kyotaka#0007'
 Discord 'https://discord.gg/RVPcK7sQAK'
